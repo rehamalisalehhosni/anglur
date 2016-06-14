@@ -1,0 +1,10 @@
+body .btn-group-justified>.btn-group .dropdown-menu{
+    width: 100%;
+    
+}#show{
+	border:solid 1px #ccc;
+	border-radius: 5px;
+	min-height: 200px;
+}.ng-invalid input{
+/*	border: #EFAB69;
+*/}

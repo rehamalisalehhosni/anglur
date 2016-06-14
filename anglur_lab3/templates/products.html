@@ -1,0 +1,17 @@
+  <table class="table">
+              <thead>
+                <tr>
+                  <th>name</th>
+                  <th>details</th>
+                  <th>actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr  ng-repeat="opt in ctrl.items">
+                  <td>{{opt.product_name}}</td>
+                  <td>{{opt.details}}</td>
+                  <td><a href="#/details/{{opt.id}}"><span>details</span></a></td>
+                </tr>
+              </tbody>
+            </table>
+

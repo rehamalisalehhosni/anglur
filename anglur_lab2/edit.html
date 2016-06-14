@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="windows-1256">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    </head>
+    <body ng-app="formApp">
+        <div class="container-fluid" ng-controller="data as ctrl">
+            <div class="well text-center">
+                <h1>Header Site</h1>
+            </div>
+            <p class="clearfix"></p>
+           <form  name="formdata" ng-submit="ctrl.submit()">
+            <div class="form-group">
+              <label for="userName">user name:</label>
+              {{ctrl.item.name}}
+              <input type="text" ng-model="ctrl.user.userName" class="form-control" name="userName" required ng.bind="ctrl.item.name" >
+              <span ng-show="formdata.userName.$touched && formdata.userName.$invalid">The name is required.</span>
+            </div>
+            <div class="form-group">
+              <label for="pwd">Password:</label>
+              <input type="password"   ng-model="ctrl.user.password" class="form-control" name="password"  ng-minlength="6" required  >
+               <span ng-show="formdata.password.$touched && formdata.password.$invalid ">The password is required and min length 6 .</span>
+            </div>
+             <div class="form-group">
+              <label for="pwd">Confirm Password:</label>
+              <input type="password" ng-model="pwdConfirm" ng-model="pwdConfirm" class="form-control" name="pwdConfirm" ng-minlength="6"  required>
+              <span ng-show="formdata.pwdConfirm.$touched && formdata.pwdConfirm.$invalid &&  formdata.password!=formdata.pwdConfirm">The password is required and min length 6 and  matched .</span>
+
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="volley" name="hobbies"   ng-model="ctrl.user.hobbies['volley']"   ng-required="ctrl.user.hobbies.length < 3">volley</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="football" name="hobbies"  ng-model="ctrl.user.hobbies['football']"  ng-required="ctrl.user.hobbies.length < 3">football</label>
+            </div>
+            <div class="checkbox ">
+              <label><input type="checkbox" value="bascket" name="hobbies"  ng-model="ctrl.user.hobbies['bascket']"  ng-required="ctrl.user.hobbies.length < 3">bascket</label>
+            </div>
+             <div class="checkbox " >
+              <label><input type="checkbox" value="lablabla" name="hobbies"  ng-required="ctrl.user.hobbies.length < 3" ng-model="ctrl.user.hobbies['lablabla']">lablabla</label>
+            </div>
+              <span  ng-show="ctrl.user.hobbies.length < 3">at least 3.</span>
+                <label class="radio-inline">
+                <input type="radio" name="gender" value="female" ng-model="ctrl.user.gender" checked>Female
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="gender" value="male" ng-model="ctrl.user.gender">male
+              </label>
+              <br/>
+              <br/>
+                  <input type="submit"   value="Submit"  ng-disabled="formdata.$invalid">
+          </form>
+            <br/>
+            <br/>
+            </div>
+            <div class="footer well text-center"> <h3>footer</h3> </div>
+        </div>
+       	<script type="text/javascript" src="js/jquery-1.11.2.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/angular.min.js"></script>
+       	<script type="text/javascript" src="js/myfunctions.js"></script>      
+    </body>
+</html>
